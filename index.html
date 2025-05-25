@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3 Days Left – Love Code Cracker</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f9d29d, #ffd3a5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      width: 50px;
+      height: 40px;
+      font-size: 20px;
+      text-align: center;
+      margin: 5px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      font-size: 16px;
+      background: #e17055;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .hint {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>🔐 3 Days Left – Crack the Love Code</h2>
+  <div class="hint">Three special dates, three milestones of love – can you guess them? 🔍💘</div>
+  <input type="number" id="digit1" min="1" max="31" placeholder="DD">
+  <input type="number" id="digit2" min="1" max="31" placeholder="DD">
+  <input type="number" id="digit3" min="1" max="31" placeholder="DD">
+  <br>
+  <button onclick="checkCode()">Submit</button>
+  <div class="message" id="msg"></div>
+</div>
+
+<script>
+  const correctCode = [21, 10, 27]; // Bride, Groom, Nikkah
+
+  function checkCode() {
+    const d1 = parseInt(document.getElementById("digit1").value);
+    const d2 = parseInt(document.getElementById("digit2").value);
+    const d3 = parseInt(document.getElementById("digit3").value);
+
+    const entered = [d1, d2, d3];
+    const msg = document.getElementById("msg");
+
+    if (JSON.stringify(entered) === JSON.stringify(correctCode)) {
+      msg.innerHTML = "🎉 Correct! 3 Days Left Until Their Forever Begins 💖";
+      msg.style.color = "green";
+    } else {
+      msg.innerHTML = "❌ Wrong code! Think of the special dates again.";
+      msg.style.color = "red";
+    }
+  }
+</script>
+
+</body>
+</html>
+
